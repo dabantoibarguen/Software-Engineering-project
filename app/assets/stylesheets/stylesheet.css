@@ -1,0 +1,204 @@
+.menu-head:hover{
+    background-color: lightgray !important; 
+    color: white;
+}
+
+#current{
+    background-color: turquoise !important;
+    color: white;
+}
+
+a{
+    text-decoration: inherit !important;
+    color: inherit !important;
+}
+
+.menu-link{
+    position: absolute;
+    width: 49.35%;
+    padding-bottom: 1.5vh;
+}
+
+#home{
+    background-repeat: no-repeat;
+    background-size: 100%
+}
+
+#carta{
+    background-color: white;
+}
+
+.menu-head{
+    background-color: whitesmoke !important;
+    width: 50%;
+    
+}
+
+#content{
+    background-color: whitesmoke;
+    margin-top: 5vh;
+    min-height: 30vh;
+    text-align: justify;      
+}
+
+#posting{
+    margin-right: 2vw;
+    margin-bottom: 2vh;
+    position: relative;
+    float: left;
+}
+
+.post{
+    background-color: white;
+    max-height: 30.2vh;
+    margin-top: 4vh;
+    margin-bottom: 3vh;
+    -moz-box-shadow: 1px 2px 1px rgba(0,0,0,.5);
+    -webkit-box-shadow: 1px 1px 2px rgba(0,0,0,.5);
+    box-shadow: 1px 1.5px 2px rgba(0,0,0,.5);
+    border-radius: 2px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#posts{
+    border-spacing: 10vh;
+    margin-left: 5vw;
+    margin-right: 5vw;
+    margin-top: 5vh;
+    width: 90vw;
+}
+
+#title{
+    text-align: center;
+    background-color: lightblue;
+    font-size: 250%;
+    font-weight: 500;
+    text-align: center;
+}
+
+#links{
+    margin-bottom: 0px;
+    -moz-box-shadow: 1px 2px 1px rgba(0,0,0,.5);
+    -webkit-box-shadow: 1px 1px 2px rgba(0,0,0,.5);
+    box-shadow: 1px 1.5px 2px rgba(0,0,0,.5);
+    border: transparent;
+}
+
+.name{
+    width: 12vw;
+}
+
+.by{
+    width: 12vw;
+    position: relative;
+    top: -2vh;
+    margin-bottom: 0;
+    size: 0;
+
+}
+
+.upvote, .downvote{
+    width: 1.5em;
+    height: 1.2em;
+}
+
+.downvote{
+    transform: rotate(180deg);
+}
+
+.by{
+    text-align: right;
+    font-size: x-small;
+    width: 89vw;
+}
+
+/* .description:hover{
+    white-space: normal;
+}
+ */
+.description{
+    /*white-space: nowrap;*/
+    max-width: 75vw;
+    overflow: hidden;
+}
+
+body{
+    background-color: whitesmoke !important;
+}
+
+.dark{
+    background-color: #365880 !important;
+}
+
+#dmode{
+    right: 0;
+    bottom: 0;
+    position: fixed;
+    width: 3vw;
+    height: 6vh;
+    font-size: 175%;
+}
+
+.dark_post{
+    background-color: #3B919B;
+    max-height: 30.2vh;
+    margin-top: 5vh;
+    -moz-box-shadow: 1px 2px 1px rgba(0,0,0,.5);
+    -webkit-box-shadow: 1px 1px 2px rgba(0,0,0,.5);
+    box-shadow: 1px 1.5px 2px rgba(0,0,0,.5);
+    border-radius: 2px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: whitesmoke;
+}
+
+.dark-head, .dark-title{
+    color: whitesmoke
+}
+
+.btn{
+    background-color: lightblue !important;
+    margin-bottom: 5vh;
+    margin-left: 5vw;
+}
+
+.btn-new2{
+    position: absolute;
+    background-color: lightblue !important;
+    margin-bottom: 5vh;
+    left: -5vw !important;
+}
+
+.btn-new3{
+    position: absolute ;
+    background-color: turquoise !important;
+    right: 1vw !important;
+    top: 1.5vh !important;
+    z-index: 9999 !important; 
+}
+
+.btn:active{
+    background-color: turquoise !important;
+    color: rgb(17, 13, 13) !important;
+}
+
+#sign{
+    position: absolute;
+    right: 2vw !important;
+    top: 1.5vh !important;
+}
+
+.right{
+    top: 0 !important;
+    position: absolute;
+    right: 2vw !important;
+}
+
+.wel{
+    position: absolute !important;
+    top: 0 !important;
+    background-color: transparent !important;
+    width: 100%;
+    border-color: transparent !important;
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Food blog</title>
+    <script src="/assets/script.js">
+    </script>
+    </head>
+  <body id="home">
+    <div id="title">
+      Food blog
+                
+    </div>
+
+    <button id="dmode" onclick="toggleDarkMode()">☽</button>
+    <table id="links" class="table table-bordered">
+      <tbody>
+        <tr>
+            <th id="current" class="menu-head">Blog</th>
+            <th id="menu" class="menu-head">
+              <%= link_to('Catalogue', items_path()) %>
+            </th>
+        </tr>
+        </tbody>  
+  
+    </table>
+    
+    <div id="posts">
+    <% @posts.each do |p| %>
+        <div class="post">
+        <b><span class="name"><%= link_to("#{p.name}", post_path(p)) %></span></b>
+        <div class="by">Posted by: <%= p.user.email %></div>
+        <span class="description"><%= p.description %></span>
+        <br>
+        </div>
+    <% end %>
+    
+    
+    </div>
+  </div>
+  <% if user_signed_in? %>
+    <%= link_to "Click here to post", new_post_path, :class => "btn btn-new" %>
+  <% end %>
+  </body>  
+</html>

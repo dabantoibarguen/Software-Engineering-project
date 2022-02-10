@@ -1,0 +1,38 @@
+<div id="title">
+    Food Blog
+</div>
+<%= link_to("Go back", posts_path, :class => "btn2") %>
+<br>
+<br>
+
+<div id="main">
+  <div class="row">
+    <div class="col-md">
+      <h3>Add new Post</h3>
+    </div>
+  </div>
+  <%= form_with model: @post, local: true, :class => "form-group" do |p| %>
+    <div class="row">
+      <div class="col-md-3">
+        <%= p.label :name %>
+      </div>
+      <div class="col-md-4">
+        <%= p.text_field :name %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3">
+        <%= p.label :description %>
+      </div>
+      <div class="col-md-6">
+        <%= p.text_area :description %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-2">
+        <%= p.submit 'Create new post' %>
+      </div>
+    </div>
+  <% end %>
+</div>

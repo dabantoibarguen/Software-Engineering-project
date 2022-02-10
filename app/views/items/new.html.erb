@@ -1,0 +1,56 @@
+<div id="title">
+    Food Catalogue
+</div>
+<%= link_to("Go back", items_path, :class => "btn2") %>
+<br>
+<br>
+
+<div id="main">
+  <div class="row">
+    <div class="col-md">
+      <h3>Create new food item</h3>
+    </div>
+  </div>
+  <%= form_with model: @item, local: true, :class => "form-group" do |i| %>
+    <div class="row">
+      <div class="col-md-3">
+        <%= i.label :name %>
+      </div>
+      <div class="col-md-4">
+        <%= i.text_field :name %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3">
+        <%= i.label :description %>
+      </div>
+      <div class="col-md-6">
+        <%= i.text_area :description %>
+      </div>
+    </div>
+
+      <div class="row">
+      <div class="col-md-3">
+        <%= i.label :calories %>
+      </div>
+      <div class="col-md-6">
+        <%= i.number_field :calories %>
+      </div>
+    </div>
+
+      <div class="row">
+      <div class="col-md-3">
+        <%= i.label :diet %>
+      </div>
+      <div class="col-md-6">
+        <%= i.text_area :diet %>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-md-2">
+        <%= i.submit 'Create new food' %>
+      </div>
+    </div>
+  <% end %>
+</div>

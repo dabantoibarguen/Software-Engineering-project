@@ -1,0 +1,11 @@
+<tr>
+  <td>
+    <%= "#{review.stars}" %>
+  </td>
+  <td>
+    <%= "#{review.review}" %>
+  </td>
+  <td>
+    <%= "#{User.find(review.user_id).email}" %>
+  </td>
+</tr>

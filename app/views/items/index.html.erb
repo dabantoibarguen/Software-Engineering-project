@@ -1,0 +1,68 @@
+
+<head>
+  <meta charset="utf-8"/>
+  <title>Food Catalogue</title>
+  <script src="/assets/script.js">
+  </script>
+</head>
+
+<body id="home">
+    
+    <div id="title">
+        Food Catalogue
+    </div>
+
+    <button id="dmode" onclick="toggleDarkMode()">☽</button>
+    
+    <table id="links" class="table table-bordered">
+        <tbody>
+            <tr>
+                <th id="blog" class="menu-head">
+                <%= link_to('Blog', posts_path()) %>
+                </th>
+                <th id="current" class="menu-head">Catalogue</th>
+            </tr>
+        </tbody>
+
+    </table> 
+
+    <br>
+    <div id="food" class="col-md-3">
+        <h3>Food items</h3>
+    </div>
+    <table class="table">
+        <thead class="thead-light">
+        <tr id="head-com" class="products_header">
+            <th>
+            Name
+            </th>
+            <th>Description</th>
+            <th>Calories</th>
+            <th>Diet</th>
+        </tr>
+        </thead>
+        <tbody>
+        <% @items.each do |i| %>
+            <tr class="post">
+            <td class="itemname">
+                <%= link_to "#{i.name}", item_path(i) %>
+            </td>
+            <td class="itemdesc">
+                <%= i.description %>
+            </td>
+            <td class="itemcal">
+                <%= i.calories %>
+            </td>
+            <td class="itemdiet">
+                <%= i.diet %>
+            </td>
+            </tr>
+        <% end %>
+        </tbody>
+    </table>
+
+    <% if user_signed_in? && current_user.admin %>
+        <%= link_to "Add new food item", new_item_path, :class => "btn btn-new2" %>
+    <% end %>
+    
+<body>

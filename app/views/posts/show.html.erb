@@ -1,0 +1,61 @@
+
+    <script src="/assets/script.js"></script>
+    <div id="title">
+      Food blog
+    </div>
+    <table id="links" class="table table-bordered">
+        <tbody>
+          <tr>
+              <th id="current" class="menu-head">Blog</th>
+              <th id="menu" class="menu-head">
+                <%= link_to('Catalogue', items_path()) %>
+              </th>
+          </tr>
+          </tbody>  
+    
+      </table>
+      
+
+    <%= link_to("Go back", posts_path, :class => "btn2") %>
+    <div id="content" class="container">
+        <h2>  <%= @post.name %> </h2>
+        <br>
+        <%= @post.description %>
+    
+    </div>
+
+
+    <table class="table" id="commenttable">
+      <thead>
+        <tr>
+          <th>Comment</th>
+          <th>Reviewer</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @post.comments.each do |comment| %>
+          <%= render :partial => "comment", locals: {comment: comment} %>
+        <% end %>
+      </tbody>
+    </table>
+    <br>
+      
+    <div id="commentresult"></div>
+    
+    <% if user_signed_in? %>
+      <%= form_with(id: :commentform, model: @comment, url: create_comment_path, local: false) do |f| %>
+        <div class="row">
+          <div class="col-md-4">
+            <%= f.label :comment %>
+          </div>
+          <div class="col-md-4">
+            <%= f.text_area :comment %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <%= f.submit "Add comment" %>
+          </div>
+        </div>
+      <% end %>  
+    <% end %>

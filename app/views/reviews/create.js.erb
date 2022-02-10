@@ -1,0 +1,5 @@
+jQuery("#reviewform")[0].reset();
+
+jQuery("#reviewresult").text("Review created");
+
+jQuery("#reviewtable").append("<%= j render partial: 'items/review', locals: {review: @review} %>");

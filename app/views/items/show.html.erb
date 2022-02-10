@@ -1,0 +1,67 @@
+
+    <div id="title">
+      Food Catalogue
+    </div>
+    <table id="links" class="table table-bordered">
+        <tbody>
+            <tr>
+                <th id="blog" class="menu-head">
+                <%= link_to('Blog', posts_path()) %>
+                </th>
+                <th id="current" class="menu-head">Catalogue</th>
+            </tr>
+        </tbody>
+
+    </table> 
+
+    <%= link_to("Go back", items_path, :class => "btn2") %>
+
+    <div id="content" class="container">
+        <h2>  <%= @item.name %> </h2>
+        <br>
+        <%= @item.description %>
+    </div>
+
+        <table class="table" id="reviewtable">
+        <thead>
+          <tr>
+            <th>Stars</th>
+            <th>Review</th>
+            <th>Reviewer</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @item.reviews.each do |review| %>
+            <%= render :partial => "review", locals: {review: review} %>
+          <% end %>
+        </tbody>
+      </table>
+      <br>
+        
+      <div id="reviewresult"></div>
+      
+      <% if user_signed_in? %>
+        <%= form_with(id: :reviewform, model: @review, url: create_review_path, local: false) do |f| %>
+          <div class="row">
+            <div class="col-md-4">
+              <%= f.label :stars %>
+            </div>
+            <div class="col-md-4">
+              <%= f.number_field :stars, in: 1..5 %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4">
+              <%= f.label :review %>
+            </div>
+            <div class="col-md-4">
+              <%= f.text_area :review %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4">
+              <%= f.submit "Add review" %>
+            </div>
+          </div>
+        <% end %>  
+      <% end %>

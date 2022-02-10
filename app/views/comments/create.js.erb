@@ -1,0 +1,5 @@
+jQuery("#commentform")[0].reset();
+
+jQuery("#commentresult").text("Comment created");
+
+jQuery("#commenttable").append("<%= j render partial: 'posts/comment', locals: {comment: @comment} %>");
